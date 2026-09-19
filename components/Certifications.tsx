@@ -1,5 +1,5 @@
 import { certifications } from '@/data/certifications'
-import { Award } from 'lucide-react'
+import { Award, ExternalLink } from 'lucide-react'
 
 export default function Certifications() {
   return (
@@ -29,6 +29,16 @@ export default function Certifications() {
                   <Award size={12} className="text-slate-400" />
                   <span className="text-slate-400 text-xs">{cert.year}</span>
                 </div>
+                {cert.credentialUrl && (
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 text-xs font-medium transition-colors"
+                  >
+                    Verify credential <ExternalLink size={12} />
+                  </a>
+                )}
               </div>
             </div>
           ))}

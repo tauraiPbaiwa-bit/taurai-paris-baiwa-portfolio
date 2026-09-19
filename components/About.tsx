@@ -4,7 +4,7 @@ const stats = [
   { value: '2+', label: 'Years of Study' },
   { value: '1', label: 'Internship' },
   { value: '11', label: 'Public Repositories' },
-  { value: '5', label: 'Certifications' },
+  { value: '9', label: 'Certifications' },
 ]
 
 export default function About() {
