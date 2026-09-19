@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 backdrop-blur-md transition-colors duration-300 border-b ${
         scrolled
-          ? 'bg-white/95 dark:bg-[#060d1a]/95 border-slate-200 dark:border-[#1a2940]'
+          ? 'bg-white/95 dark:bg-[#000000]/95 border-slate-200 dark:border-[#262626]'
           : 'bg-transparent border-transparent'
       }`}
     >
@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-mono text-cyan-600 dark:text-cyan-400 font-bold text-lg tracking-wider hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+            className="font-mono text-violet-600 dark:text-violet-400 font-bold text-lg tracking-wider hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
           >
             TPB<span className="text-slate-300 dark:text-slate-600 animate-blink">_</span>
           </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors text-sm font-medium tracking-wide"
+                className="text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors text-sm font-medium tracking-wide"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="border border-cyan-600/50 dark:border-cyan-400/50 text-cyan-600 dark:text-cyan-400 px-4 py-1.5 rounded-lg text-sm font-mono hover:bg-cyan-600/10 dark:hover:bg-cyan-400/10 transition-colors"
+              className="border border-violet-600/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 px-4 py-1.5 rounded-lg text-sm font-mono hover:bg-violet-600/10 dark:hover:bg-violet-400/10 transition-colors"
             >
               Resume ↓
             </a>
@@ -83,12 +83,12 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white dark:bg-[#0d1b2a] border-t border-slate-200 dark:border-[#1a2940] py-4">
+          <div className="md:hidden bg-white dark:bg-[#0a0a0a] border-t border-slate-200 dark:border-[#262626] py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-slate-50 dark:hover:bg-[#122035] transition-colors text-sm"
+                className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-slate-50 dark:hover:bg-[#111111] transition-colors text-sm"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
@@ -98,7 +98,7 @@ export default function Navbar() {
               <a
                 href="/resume.pdf"
                 download
-                className="block text-center border border-cyan-600/50 dark:border-cyan-400/50 text-cyan-600 dark:text-cyan-400 py-2 rounded-lg font-mono text-sm hover:bg-cyan-600/10 dark:hover:bg-cyan-400/10 transition-colors"
+                className="block text-center border border-violet-600/50 dark:border-violet-400/50 text-violet-600 dark:text-violet-400 py-2 rounded-lg font-mono text-sm hover:bg-violet-600/10 dark:hover:bg-violet-400/10 transition-colors"
               >
                 Download Resume
               </a>

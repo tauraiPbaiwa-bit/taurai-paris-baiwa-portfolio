@@ -6,9 +6,9 @@
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-.dark ::-webkit-scrollbar-thumb { background: #22d3ee30; }
+.dark ::-webkit-scrollbar-thumb { background: #a78bfa60; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-.dark ::-webkit-scrollbar-thumb:hover { background: #22d3ee60; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #a78bfa90; }
 
 /* ── Terminal chrome — always dark ── */
 .terminal-window {
@@ -38,5 +38,5 @@
   margin: 0;
 }
 .dark .section-divider {
-  background: linear-gradient(to right, transparent, #1a2940 20%, #1a2940 80%, transparent);
+  background: linear-gradient(to right, transparent, #5b21b6 20%, #5b21b6 80%, transparent);
 }

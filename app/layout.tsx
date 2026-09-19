@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-white dark:bg-[#060d1a] text-slate-900 dark:text-slate-200 transition-colors duration-300">
+      <body className="font-sans antialiased bg-white dark:bg-[#000000] text-slate-900 dark:text-slate-200 transition-colors duration-300">
         <ThemeProvider>
           <Navbar />
           {children}
