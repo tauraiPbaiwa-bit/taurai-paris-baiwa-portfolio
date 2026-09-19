@@ -16,61 +16,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: '1',
-    slug: 'oracle-ecommerce-oms',
-    title: 'Oracle E-Commerce Order Management System',
-    description:
-      'An Oracle-based backend system to manage e-commerce orders, inventory, and secure transactions end-to-end.',
-    tech: ['Oracle', 'SQL', 'PL/SQL', 'Data Modeling'],
-    github: 'https://github.com/tauraiPbaiwa-bit',
-    outcome:
-      'Guaranteed data integrity and reliable order processing through robust PL/SQL stored procedures.',
-    featured: true,
-    problem:
-      'E-commerce platforms need reliable backend systems to handle concurrent orders, real-time inventory updates, and secure financial transactions without data loss or inconsistency.',
-    constraints:
-      'Oracle-first design with a priority on data integrity over raw throughput. All business logic lives in the database layer via stored procedures and triggers.',
-    architecture:
-      'Three-table relational schema: Orders (order_id, customer_id, status, total), Inventory (product_id, quantity, reserved), Transactions (tx_id, order_id, amount, status). PL/SQL procedures handle the full order lifecycle atomically.',
-    highlights: [
-      'PL/SQL stored procedures for order validation and atomic inventory decrement',
-      'Transaction rollback on payment failure — zero partial-state errors in testing',
-      'Sequence-based order IDs ensuring uniqueness under concurrent inserts',
-      'Trigger-based audit log tracking every order state transition',
-    ],
-    results: [
-      'Zero data inconsistency errors across all test scenarios',
-      'Reliable order processing enforced at the database layer',
-      'Automated rollback eliminates the need for manual error recovery',
-    ],
+    id: '1', slug: 'customer-churn-prediction-system', title: 'Customer Churn Prediction System',
+    description: 'A full-stack system that cleans customer data, performs OLAP analysis, trains churn models, and serves predictions through a React dashboard.',
+    tech: ['Python', 'FastAPI', 'React', 'MongoDB', 'XGBoost'], github: 'https://github.com/tauraiPbaiwa-bit/churn-prediction-system',
+    outcome: 'Provides explainable individual and batch churn predictions after comparing multiple machine-learning models.', featured: true,
+    problem: 'Teams need a practical way to turn customer datasets into understandable churn insights and actionable predictions without separating analysis from the decision-making workflow.',
+    constraints: 'The project supports CSV and Excel uploads, uses a reproducible preprocessing path for training and prediction, and is straightforward to run locally.',
+    architecture: 'A FastAPI backend validates and stores datasets in MongoDB, runs cleaning, feature engineering, OLAP aggregation, model training, SHAP explanation, and prediction workflows. A React and Vite dashboard presents dataset management, analytics, model comparisons, and prediction history.',
+    highlights: ['Compares XGBoost, Logistic Regression, and Random Forest models using ROC-AUC and other classification metrics', 'Adds SHAP-based explanation and feature-importance views to make model outputs interpretable', 'Supports individual and batch predictions with persisted model bundles and consistent preprocessing', 'Includes OLAP-style summaries and custom multidimensional customer-segmentation queries'],
+    results: ['Connects data preparation, analytics, model evaluation, and prediction in one workflow', 'Makes model selection transparent through comparison metrics and explainability outputs', 'Provides a reusable dashboard for working with new customer datasets'],
   },
   {
-    id: '2',
-    slug: 'student-management-system',
-    title: 'Student Management System',
-    description:
-      'An OOP-based application that centralizes student records, enrollments, and grade management in a single database-backed system.',
-    tech: ['Java', 'OOP', 'MySQL', 'JDBC'],
-    github: 'https://github.com/tauraiPbaiwa-bit',
-    outcome:
-      'Enhanced query speed and record accuracy through optimized CRUD database operations.',
-    featured: true,
-    problem:
-      'Academic institutions often manage student data across disconnected spreadsheets, making enrollment tracking, grade updates, and record retrieval slow and error-prone.',
-    constraints:
-      'OOP design chosen for maintainability and extensibility. MySQL selected for portability and ease of setup in academic environments.',
-    architecture:
-      'Four-entity model: Student (id, name, email, enrolled_date), Course (id, name, credits, instructor), Enrollment (student_id, course_id, date), Grade (enrollment_id, score, letter_grade). A JDBC layer handles all database communication with prepared statements.',
-    highlights: [
-      'Encapsulated Student, Course, Enrollment, and Grade entities with clean OOP boundaries',
-      'Optimized SELECT queries with indexed student_id and course_id columns',
-      'Prepared statements throughout — eliminates SQL injection surface',
-      'Batch insert support for bulk enrollment imports',
-    ],
-    results: [
-      'Improved query response time for multi-table lookups',
-      'Accurate, consistent grade and enrollment records across all operations',
-      'Reduced manual data-entry errors through a validation layer',
-    ],
+    id: '2', slug: 'banks-etl-pipeline', title: 'Banks ETL Pipeline',
+    description: 'A Python ETL pipeline that extracts global bank market-cap data, converts it into multiple currencies, and loads it to CSV and SQLite.',
+    tech: ['Python', 'Pandas', 'Beautiful Soup', 'SQLite', 'ETL'], github: 'https://github.com/tauraiPbaiwa-bit/Bank-ETL',
+    outcome: 'Produces queryable bank-market-capitalization data in USD, GBP, EUR, and INR with a timestamped execution log.', featured: true,
+    problem: 'A multinational team needs a repeatable process for converting a ranked list of global banks into locally useful market-capitalization data that each regional office can query.',
+    constraints: 'The workflow uses an archived source table and supplied exchange-rate data, while delivering outputs in both a portable CSV and a lightweight relational database.',
+    architecture: 'The Python pipeline extracts a market-capitalization table with requests and Beautiful Soup, transforms values with Pandas using exchange-rate data, writes a CSV, loads a SQLite table, runs office-specific queries, and records each stage in a log file.',
+    highlights: ['Extracts the largest-bank table from an archived web source', 'Transforms USD values into GBP, EUR, and INR using supplied exchange rates', 'Loads the final dataset into both CSV and SQLite for different consumption needs', 'Runs targeted SQL queries for London, Berlin, and New Delhi and logs pipeline progress'],
+    results: ['Delivers one repeatable pipeline from web extraction to queryable database output', 'Makes regional currency views available without duplicating data-preparation work', 'Creates an auditable execution trail through timestamped logging'],
+  },
+  {
+    id: '3', slug: 'waste-management-data-warehouse', title: 'Waste Management Data Warehouse',
+    description: 'A PostgreSQL data-warehouse design for analysing solid-waste collection across cities, time periods, truck types, and stations.',
+    tech: ['PostgreSQL', 'SQL', 'Data Warehousing', 'CSV'], github: 'https://github.com/tauraiPbaiwa-bit/waste-management-schema',
+    outcome: 'Enables multidimensional reporting on collection volumes by year, month, quarter, city, truck type, and station.', featured: true,
+    problem: 'A waste-management company needs its trip data organized for reliable analytical reporting across locations, time periods, stations, and truck types.',
+    constraints: 'The solution is designed specifically for PostgreSQL and uses supplied CSV datasets while keeping dimensions and measures clear for business reporting.',
+    architecture: 'A dimensional warehouse joins FactTrips with DimDate, DimStation, and DimTruck datasets. PostgreSQL SQL scripts use aggregation to answer city, time, truck-type, and station reporting questions.',
+    highlights: ['Models waste-collection activity with fact and dimension datasets', 'Uses PostgreSQL aggregation queries for year, month, and quarter analysis', 'Supports city, truck-type, and station-level reporting', 'Keeps source datasets and SQL task solutions organized for reproducible analysis'],
+    results: ['Provides a structured foundation for operational reporting and analysis', 'Makes collection trends comparable across multiple business dimensions', 'Demonstrates practical dimensional modelling and PostgreSQL analytics'],
   },
 ]

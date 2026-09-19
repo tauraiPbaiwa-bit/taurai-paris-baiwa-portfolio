@@ -16,7 +16,7 @@ export default function Projects() {
           <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-cyan-600 dark:from-cyan-400 to-transparent" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
           {featured.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

@@ -13,7 +13,7 @@ export default function Certifications() {
           <div className="mt-3 h-0.5 w-16 bg-gradient-to-r from-cyan-600 dark:from-cyan-400 to-transparent" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {certifications.map((cert) => (
             <div
               key={cert.id}

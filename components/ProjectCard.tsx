@@ -3,8 +3,9 @@ import Link from 'next/link'
 import type { Project } from '@/data/projects'
 
 const projectIcons: Record<string, string> = {
-  'oracle-ecommerce-oms': '🛒',
-  'student-management-system': '🎓',
+  'customer-churn-prediction-system': '📈',
+  'banks-etl-pipeline': '🏦',
+  'waste-management-data-warehouse': '♻️',
 }
 
 export default function ProjectCard({ project }: { project: Project }) {

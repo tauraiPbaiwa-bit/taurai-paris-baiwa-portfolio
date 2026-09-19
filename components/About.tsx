@@ -3,8 +3,8 @@ import { MapPin, GraduationCap, Briefcase } from 'lucide-react'
 const stats = [
   { value: '2+', label: 'Years of Study' },
   { value: '1', label: 'Internship' },
-  { value: '2', label: 'Projects Built' },
-  { value: '2', label: 'Certifications' },
+  { value: '11', label: 'Public Repositories' },
+  { value: '5', label: 'Certifications' },
 ]
 
 export default function About() {
