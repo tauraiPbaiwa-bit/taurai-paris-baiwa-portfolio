@@ -99,12 +99,7 @@ export default function Hero() {
             </div>
 
             <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
-              Detail-oriented CS student passionate about building scalable, database-driven
-              applications. Currently interning at{' '}
-              <span className="text-violet-600 dark:text-violet-400 font-medium">
-                Tata Consultancy Services
-              </span>
-              , turning complex datasets into actionable insights.
+              Computer Science student, learning by building things with data and code. Nice to see throght the screen!
             </p>
 
             <div className="flex flex-wrap gap-4">
