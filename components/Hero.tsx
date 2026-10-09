@@ -99,7 +99,7 @@ export default function Hero() {
             </div>
 
             <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
-              Computer Science student, learning by building things with data and code. Nice to see throght the screen!
+              Computer Science student, learning by building things with data and code. Nice to see you through the screen :)
             </p>
 
             <div className="flex flex-wrap gap-4">
